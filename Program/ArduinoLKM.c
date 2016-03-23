@@ -17,7 +17,7 @@
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Malcolm Davis");
 MODULE_AUTHOR("Arturo Chinchilla");
-MODULE_DESCRIPTION("A simple Linux-Arduino comunication LKM.");
+MODULE_DESCRIPTION("LKM for Linux 3.x which will be written in pure C and interact with an Arduino device.");
 MODULE_VERSION("0.1");
 
 static int interruptionNumber;
@@ -154,5 +154,4 @@ static struct attribute_group attr_group = {
 };
 
 static struct kobject arduino_kObject;
-
 
