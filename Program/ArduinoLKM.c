@@ -155,3 +155,60 @@ static struct attribute_group attr_group = {
 
 static struct kobject arduino_kObject;
 
+
+/** 
+ * @brief The LKM initialization function
+ * @return returns 0 if successful
+ */
+static int __init arduinoLKM_init(void){
+   int result = 0;
+   unsigned long irqFlags = IRQF_TRIGGER_RISING;
+ 
+   printk(KERN_INFO "ArduinoLKM: Initializing the Arduino LKM\n");
+   // create the kobject sysfs entry at /sys/Arduino -- probably not an ideal location!
+   arduino_kObject = kobject_create_and_add("Arduino", kernel_kobj->parent); // kernel_kobj points to /sys/kernel
+   if(!arduino_kObject){
+      printk(KERN_ALERT "ArduinoLKM: failed to create kobject mapping\n");
+      return -ENOMEM;
+   }
+   // add the attributes to /sys/ebb/ -- for example, /sys/ebb/gpio115/numberPresses
+   result = sysfs_create_group(arduino_kObject, &attr_group);
+   if(result) {
+      printk(KERN_ALERT "EBB Button: failed to create sysfs group\n");
+      kobject_put(arduino_kObject);                          // clean up -- remove the kobject sysfs entry
+      return result;
+   }
+   getnstimeofday(&ts_last);                          // set the last time to be the current time
+   ts_diff = timespec_sub(ts_last, ts_last);          // set the initial time difference to be 0
+ 
+   // Going to set up the LED. It is a GPIO in output mode and will be on by default
+   ledOn = true;
+   gpio_request(gpioLED, "sysfs");          // gpioLED is hardcoded to 49, request it
+   gpio_direction_output(gpioLED, ledOn);   // Set the gpio to be in output mode and on
+// gpio_set_value(gpioLED, ledOn);          // Not required as set by line above (here for reference)
+   gpio_export(gpioLED, false);             // Causes gpio49 to appear in /sys/class/gpio
+                     // the bool argument prevents the direction from being changed
+   gpio_request(gpioButton, "sysfs");       // Set up the gpioButton
+   gpio_direction_input(gpioButton);        // Set the button GPIO to be an input
+   gpio_set_debounce(gpioButton, DEBOUNCE_TIME); // Debounce the button with a delay of 200ms
+   gpio_export(gpioButton, false);          // Causes gpio115 to appear in /sys/class/gpio
+                     // the bool argument prevents the direction from being changed
+ 
+   // Perform a quick test to see that the button is working as expected on LKM load
+   printk(KERN_INFO "EBB Button: The button state is currently: %d\n", gpio_get_value(gpioButton));
+ 
+   /// GPIO numbers and IRQ numbers are not the same! This function performs the mapping for us
+   irqNumber = gpio_to_irq(gpioButton);
+   printk(KERN_INFO "EBB Button: The button is mapped to IRQ: %d\n", irqNumber);
+ 
+   if(!isRising){                           // If the kernel parameter isRising=0 is supplied
+      IRQflags = IRQF_TRIGGER_FALLING;      // Set the interrupt to be on the falling edge
+   }
+   // This next call requests an interrupt line
+   result = request_irq(irqNumber,             // The interrupt number requested
+                        (irq_handler_t) ebbgpio_irq_handler, // The pointer to the handler function below
+                        IRQflags,              // Use the custom kernel param to set interrupt type
+                        "ebb_button_handler",  // Used in /proc/interrupts to identify the owner
+                        NULL);                 // The *dev_id for shared interrupt lines, NULL is okay
+   return result;
+}
