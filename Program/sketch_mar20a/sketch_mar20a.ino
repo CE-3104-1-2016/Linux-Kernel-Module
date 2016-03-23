@@ -14,6 +14,7 @@ int main()
   short Mask1[3]= {B00000000,B00111000,B00000000};
   short Mask2[3]= {B00100000,B00010000,B00001000};
   short* Masks[2]= {Mask1, Mask2};
+  Serial.begin(9600);
   int i=0;
   while(1){
     checkButton();
@@ -38,7 +39,8 @@ void ledFuntion(short * mask){
 void checkButton(){
     if(PINB==1 && !BUTTONSTATUS){
       LEDMODE=1;
-      BUTTONSTATUS=1;  
+      BUTTONSTATUS=1;
+      Serial.print("Holi que hace, yo aprete un boton");  
     }
     if(PINB==0 && BUTTONSTATUS){
       BUTTONSTATUS=0;
