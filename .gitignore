@@ -7,13 +7,14 @@
 # Mod files
 *.mod.c
 *.cmd
-*.sysvers
+*.symvers
 *.mod
+*.order
 
 # Precompiled Headers
 *.gch
 *.pch
-
+e
 # Libraries
 *.lib
 *.a
