@@ -1,4 +1,4 @@
-obj -m += stick_driver.o
+obj-m+=ArduinoLKM.o
 
 
 all:

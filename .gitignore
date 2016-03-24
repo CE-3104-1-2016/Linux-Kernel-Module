@@ -4,6 +4,12 @@
 *.obj
 *.elf
 
+# Mod files
+*.mod.c
+*.cmd
+*.sysvers
+*.mod
+
 # Precompiled Headers
 *.gch
 *.pch

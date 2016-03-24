@@ -12,7 +12,8 @@
 #include <linux/module.h>
 #include <linux/kernel.h>  
 #include <linux/interrupt.h> 
-#include <linux/kobject.h>  
+#include <linux/kobject.h> 
+#include <unistd.h> 
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Malcolm Davis");
@@ -68,7 +69,8 @@ static ssize_t buttonStats_store(struct kobject *kernelObject, struct kobj_attri
  * @param buffer the buffer that will have the button state.
 */
 static ssize_t ledStatus_show(struct kobject *kernelObject, struct kobj_attribute *attribute, char *buffer){
-   return sprintf(buffer, "%d\n", ledStatus);
+   int tmp = (int)ledStatus;
+   return sprintf(buffer, "%d\n", tmp);
 }
 
 /**
@@ -78,7 +80,8 @@ static ssize_t ledStatus_show(struct kobject *kernelObject, struct kobj_attribut
  * @param buffer the buffer that will have the button mode.
 */
  static ssize_t ledMode_show(struct kobject *kernelObject, struct kobj_attribute *attribute, char *buffer){
-   return sprintf(buffer, "%d\n", ledMode);
+   int tmp = (int)ledMode;
+   return sprintf(buffer, "%d\n", tmp);
 }
 
 /** 
@@ -91,7 +94,8 @@ static ssize_t ledStatus_show(struct kobject *kernelObject, struct kobj_attribut
  */
  static ssize_t ledMode_store(struct kobject *kernelObject, struct kobj_attribute *attribute,
  const char *buffer, size_t count){
-   sscanf(buffer, "%du", &ledMode);
+   int tmp = (int)ledMode;
+   sscanf(buffer, "%du", &tmp);
    return count;
 }
 
@@ -102,7 +106,7 @@ static ssize_t ledStatus_show(struct kobject *kernelObject, struct kobj_attribut
  * @param buffer the buffer that will have repetition number.
 */
  static ssize_t burstRep_show(struct kobject *kernelObject, struct kobj_attribute *attribute, char *buffer){
-   return sprintf(buffer, "%d\n", burst);
+   return sprintf(buffer, "%d\n", burstRep);
 }
 
 /** 
@@ -115,7 +119,7 @@ static ssize_t ledStatus_show(struct kobject *kernelObject, struct kobj_attribut
  */
  static ssize_t burstRep_store(struct kobject *kernelObject, struct kobj_attribute *attribute,
  const char *buffer, size_t count){
-   sscanf(buffer, "%du", &burst);
+   sscanf(buffer, "%du", &burstRep);
    return count;
 }
 
@@ -153,4 +157,78 @@ static struct attribute_group attr_group = {
       .attrs = arduino_attrs,              
 };
 
-static struct kobject arduino_kObject;
+static struct kobject *arduino_kObject;
+
+
+/** 
+ * @brief The LKM initialization function
+ * @return returns 0 if successful
+ */
+static int __init arduinoLKM_init(void){
+   int result = 0;
+   
+   /***********************/
+   //unsigned long irqFlags = IRQF_TRIGGER_RISING;
+   /************************/
+
+   printk(KERN_INFO "ArduinoLKM: Initializing the Arduino LKM\n");
+   // create the kobject sysfs entry at /sys/Arduino -- probably not an ideal location!
+   arduino_kObject = kobject_create_and_add("Arduino", kernel_kobj->parent); 
+   if(!arduino_kObject){
+      printk(KERN_ALERT "ArduinoLKM: cannot create the kobject\n");
+      return -ENOMEM;
+   }
+   // add the attributes to /sys/Arduino/
+   result = sysfs_create_group(arduino_kObject, &attr_group);
+   if(result) {
+      printk(KERN_ALERT "ArduinoLKM: cannot create the sysfs group\n");
+      kobject_put(arduino_kObject);
+      return result;
+   }
+   ledStatus = false;
+
+/*  // Perform a quick test to see that the button is working as expected on LKM load
+   printk(KERN_INFO "ArduinoLKM: The button state is currently: %d\n", gpio_get_value(gpioButton));
+ 
+   /// Maps the serial to the IRQ
+   irqNumber = gpio_to_irq(gpioButton);
+   printk(KERN_INFO "ArduinoLKM: The button is mapped to IRQ: %d\n", irqNumber);
+ 
+   if(!isRising){
+      IRQflags = IRQF_TRIGGER_FALLING;
+   }
+
+   // Calls the Interruption
+   result = request_irq(interruptionNumber, (irq_handler_t) arduino_irq_handler, irqFlags,
+   "Arduino_Button_Handler", NULL);
+   */
+   result=0;//Just for test
+   return result;
+}
+
+/** 
+ * @brief The arduinoLKM cleanup function
+ */
+static void __exit arduinoLKM_exit(void){
+   printk(KERN_INFO "ArduinoLKM: The button has been pressed %d times\n", buttonStats);
+   kobject_put(arduino_kObject);                   // clean up -- remove the kobject sysfs entry
+   free_irq(interruptionNumber, NULL);               // Free the IRQ number, no *dev_id required in this case
+   printk(KERN_INFO "ArduinoLKM: Goodbye from the Arduino LKM!\n");
+}
+ 
+/** 
+ * @brief The arduino event Handler function
+ * @param irq    the IRQ number that is associated.
+ * @param dev_id the identificator of the device.
+ * @param regs registers bound to the hardware.
+ * return returns IRQ_HANDLED if successful or IRQ_NONE if not.
+ */
+static irq_handler_t ebbgpio_irq_handler(unsigned int irq, void *dev_id, struct pt_regs *regs){
+   ledStatus = !ledStatus;                      // Invert the LED state on each button press
+   //printk(KERN_INFO "ArduinoLKM: The button state is currently: %d\n", gpio_get_value(gpioButton));
+   buttonStats++;                     // Global counter, will be outputted when the module is unloaded
+   return (irq_handler_t) IRQ_HANDLED;  // Announce that the IRQ has been handled correctly
+}
+
+module_init(arduinoLKM_init);
+module_exit(arduinoLKM_exit);
