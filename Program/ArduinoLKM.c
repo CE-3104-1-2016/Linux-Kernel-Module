@@ -51,6 +51,16 @@ static ssize_t buttonStats_show(struct kobject *kernelObject, struct kobj_attrib
 static ssize_t buttonStats_store(struct kobject *kernelObject, struct kobj_attribute *attribute,
  const char *buffer, size_t count){
    sscanf(buffer, "%du", &buttonStats);
+   printk("ARduinoLKM: Buffer Count: %d\n",count);
+   printk("ARduinoLKM: Buffer: %s\n", *buffer);
+   if(PTR_ERR(arduinoFile)>0){
+     int ret = file_write(arduinoFile, buffer, count);
+     if(ret != count){
+       printk( "ARduinoLKM: Did not write, error: %d\n", ERR_PTR(ret));
+     }else{
+       printk( "ARduinoLKM: Write, code: %d\n", ERR_PTR(ret));
+     }
+   }
    return count;
 }
 
@@ -88,11 +98,13 @@ static ssize_t ledStatus_show(struct kobject *kernelObject, struct kobj_attribut
     sscanf(buffer, "%du", &ledMode);
     printk("ARduinoLKM: Buffer Count: %d\n",count);
     printk("ARduinoLKM: Buffer: %s\n", *buffer);
-    int ret = file_write(arduinoFile, buffer, count);
-    if(ret != count){
-      printk( "ARduinoLKM: Did not write, error: %d\n", ERR_PTR(ret));
-    }else{
-      printk( "ARduinoLKM: Write, code: %d\n", ERR_PTR(ret));
+    if(PTR_ERR(arduinoFile)>0){
+      int ret = file_write(arduinoFile, buffer, count);
+      if(ret != count){
+        printk( "ARduinoLKM: Did not write, error: %d\n", ERR_PTR(ret));
+      }else{
+        printk( "ARduinoLKM: Write, code: %d\n", ERR_PTR(ret));
+      }
     }
     return count;
 }
@@ -118,6 +130,16 @@ static ssize_t ledStatus_show(struct kobject *kernelObject, struct kobj_attribut
  static ssize_t burstRep_store(struct kobject *kernelObject, struct kobj_attribute *attribute,
  const char *buffer, size_t count){
    sscanf(buffer, "%du", &burstRep);
+   printk("ARduinoLKM: Buffer Count: %d\n",count);
+   printk("ARduinoLKM: Buffer: %s\n", *buffer);
+   if(PTR_ERR(arduinoFile) > 0){
+     int ret = file_write(arduinoFile, buffer, count);
+     if(ret != count){
+       printk( "ARduinoLKM: Did not write, error: %d\n", ERR_PTR(ret));
+     }else{
+       printk( "ARduinoLKM: Write, code: %d\n", ERR_PTR(ret));
+     }
+   }
    return count;
 }
 
@@ -200,7 +222,9 @@ static void __exit arduinoLKM_exit(void){
    printk(KERN_INFO "ArduinoLKM: The button has been pressed %d times\n", buttonStats);
    kobject_put(arduino_kObject);                   // clean up -- remove the kobject sysfs entry
    printk(KERN_INFO "ArduinoLKM: Closing device!\n");
-   file_close(arduinoFile);
+   if(arduinoFile>0){
+     file_close(arduinoFile);
+   }
    printk(KERN_INFO "ArduinoLKM: Goodbye from the Arduino LKM!\n");
 }
 
