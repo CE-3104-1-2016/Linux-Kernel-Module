@@ -1,0 +1,6 @@
+Console instructions:
+
+$ avr-gcc -Os -DF\_CPU=16000000UL -mmcu=atmega328p -c -o ArduinoInt.o ArduinoInt.c
+$ item avr-gcc -mmcu=atmega328p ArduinoInt.o -o ArduinoInt
+$ item avr-objcopy -O ihex -R .eeprom ArduinoInt ArduinoInt.hex
+$ item avrdude -F -V -c arduino -p ATMEGA328P -P /dev/ttyACM0 -b 115200 -U flash:w:ArduinoInt.hex
