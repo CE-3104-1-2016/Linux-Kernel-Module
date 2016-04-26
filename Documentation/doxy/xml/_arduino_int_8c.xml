@@ -1,0 +1,575 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="_arduino_int_8c" kind="file">
+    <compoundname>ArduinoInt.c</compoundname>
+    <includes local="no">avr/io.h</includes>
+    <includes local="no">util/delay.h</includes>
+    <includes local="no">stdbool.h</includes>
+    <includes local="no">avr/interrupt.h</includes>
+    <incdepgraph>
+      <node id="39">
+        <label>stdbool.h</label>
+      </node>
+      <node id="40">
+        <label>avr/interrupt.h</label>
+      </node>
+      <node id="36">
+        <label>Program/ArduinoInt/ArduinoInt.c</label>
+        <link refid="ArduinoInt.c"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>avr/io.h</label>
+      </node>
+      <node id="38">
+        <label>util/delay.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_arduino_int_8c_1a9dcc454a4d70498138f21035a2bf36b9" prot="public" static="no">
+        <name>delayTime</name>
+        <initializer>250</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="15" column="9" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_arduino_int_8c_1a43bafb28b29491ec7f871319b5a3b2f8" prot="public" static="no">
+        <name>F_CPU</name>
+        <initializer>16000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="16" column="9" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_arduino_int_8c_1aff614bd47a8855bb6df5a611ff68e39f" prot="public" static="no">
+        <name>BUAD</name>
+        <initializer>9600</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="17" column="9" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_arduino_int_8c_1a91cf1c8bed2b5667f322c71ac83e8294" prot="public" static="no">
+        <name>BRC</name>
+        <initializer>((<ref refid="_arduino_int_8c_1a43bafb28b29491ec7f871319b5a3b2f8" kindref="member">F_CPU</ref>/16/<ref refid="_arduino_int_8c_1aff614bd47a8855bb6df5a611ff68e39f" kindref="member">BUAD</ref>)-1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="18" column="9" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_arduino_int_8c_1a739a2a1a0047c98ac1b18ecd25dac092" prot="public" static="no">
+        <name>RX_BUFFER_SIZE</name>
+        <initializer>128</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="19" column="9" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_arduino_int_8c_1ae70baf5399951da1e7ad45a0ed890832" prot="public" static="no">
+        <name>cbi</name>
+        <param><defname>sfr</defname></param>
+        <param><defname>bit</defname></param>
+        <initializer>(_SFR_BYTE(sfr) &amp;= ~_BV(bit))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="20" column="9" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_arduino_int_8c_1ac4a5536d9bf092116f88b94797ddc882" prot="public" static="no">
+        <name>sbi</name>
+        <param><defname>sfr</defname></param>
+        <param><defname>bit</defname></param>
+        <initializer>(_SFR_BYTE(sfr) |= _BV(bit))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="21" column="9" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="_arduino_int_8c_1ad16f6fa0938b9ccd64529543ca9f76ed" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char buffChar[RX_BUFFER_SIZE-1]</definition>
+        <argsstring>[RX_BUFFER_SIZE-1]</argsstring>
+        <name>buffChar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="31" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_arduino_int_8c_1a52965a1c4f6d34e3a0afaa0133a8754e" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char rxBuffer[RX_BUFFER_SIZE]</definition>
+        <argsstring>[RX_BUFFER_SIZE]</argsstring>
+        <name>rxBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="32" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rxReadPos</definition>
+        <argsstring></argsstring>
+        <name>rxReadPos</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="33" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_arduino_int_8c_1afd425c235e3779872807b8b7851946c3" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t rxWritePos</definition>
+        <argsstring></argsstring>
+        <name>rxWritePos</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="34" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_arduino_int_8c_1aa49977b39cb1b9c4a914910334a2b1e9" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool LEDMODE</definition>
+        <argsstring></argsstring>
+        <name>LEDMODE</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="35" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_arduino_int_8c_1a2f00310030be20894871600cfef90f1d" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool BUTTONSTATUS</definition>
+        <argsstring></argsstring>
+        <name>BUTTONSTATUS</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="36" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="_arduino_int_8c_1ab8dffa88e0bf425389840503d2068bf8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rep</definition>
+        <argsstring></argsstring>
+        <name>rep</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="37" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_arduino_int_8c_1aa7488c25c825c6e1a7d7618254c8e77a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ledModeZero</definition>
+        <argsstring>(void)</argsstring>
+        <name>ledModeZero</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="23" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="72" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_int_8c_1aa7ffe403b470babf6502356d23c04060" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ledModeOne</definition>
+        <argsstring>(void)</argsstring>
+        <name>ledModeOne</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="24" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="85" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_int_8c_1a08e07c58289097544c41d4e0628de985" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int checkButton</definition>
+        <argsstring>(void)</argsstring>
+        <name>checkButton</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="25" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="105" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_int_8c_1a8e28a0a1cb57ee8bdfd7a1f0b97c4de5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void serialTx</definition>
+        <argsstring>(void)</argsstring>
+        <name>serialTx</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="26" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="120" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_int_8c_1a5e58375e9fc0e68cb465caac92184aa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void serialRx</definition>
+        <argsstring>(void)</argsstring>
+        <name>serialRx</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="27" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="133" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_int_8c_1a4d304c8c5a641e40f3eef66fead2a640" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char</type>
+        <definition>char getChar</definition>
+        <argsstring>(void)</argsstring>
+        <name>getChar</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="28" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="164" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_int_8c_1a1ae21cf34eb6bd3217e4e2d05b39a40d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>char *</type>
+        <definition>char * getBuffChar</definition>
+        <argsstring>(void)</argsstring>
+        <name>getBuffChar</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="29" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="176" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_int_8c_1a24aa7c7d0990c654b0f0e0b13f78a891" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void selectionMode</definition>
+        <argsstring>(void)</argsstring>
+        <name>selectionMode</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="30" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="56" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_int_8c_1acdef7a1fd863a6d3770c1268cb06add3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="45" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="45" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_int_8c_1a09ce999e15ad60b8a3f07d08af1946f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ISR</definition>
+        <argsstring>(USART_RX_vect)</argsstring>
+        <name>ISR</name>
+        <param>
+          <type>USART_RX_vect</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" line="191" column="1" bodyfile="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c" bodystart="191" bodyend="200"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="11"><highlight class="preprocessor">#include<sp/>&lt;avr/io.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;util/delay.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Header<sp/>to<sp/>use<sp/>_delay_ms()<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdbool.h&gt;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Header<sp/>to<sp/>use<sp/>boolean<sp/>tipes<sp/>in<sp/>C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;avr/interrupt.h&gt;</highlight><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Contain<sp/>functions<sp/>to<sp/>manage<sp/>interrupts</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>delayTime<sp/>250<sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Define<sp/>a<sp/>delay<sp/>time<sp/>used<sp/>in<sp/>the<sp/>code</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>F_CPU<sp/>16000000<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Define<sp/>the<sp/>Frequency<sp/>of<sp/>the<sp/>Arduino<sp/>CPU</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>BUAD<sp/>9600<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>Amount<sp/>of<sp/>bauds<sp/>(characters<sp/>per<sp/>second)</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>BRC<sp/>((F_CPU/16/BUAD)-1)<sp/>//<sp/>Baud<sp/>Rate<sp/>Calculate</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>RX_BUFFER_SIZE<sp/>128<sp/><sp/>//<sp/>Size<sp/>of<sp/>Buffter<sp/>used<sp/>to<sp/>recieve<sp/>serial<sp/>data</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>cbi(sfr,<sp/>bit)<sp/>(_SFR_BYTE(sfr)<sp/>&amp;=<sp/>~_BV(bit))<sp/>//<sp/>Provide<sp/>access<sp/>to<sp/>I/O<sp/>Registers</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>sbi(sfr,<sp/>bit)<sp/>(_SFR_BYTE(sfr)<sp/>|=<sp/>_BV(bit))<sp/><sp/>//<sp/>Provide<sp/>access<sp/>to<sp/>I/O<sp/>Registers</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1aa7488c25c825c6e1a7d7618254c8e77a" kindref="member">ledModeZero</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="comment">//<sp/>Manage<sp/>the<sp/>first<sp/>LED<sp/>animation,<sp/>turn<sp/>ON/OFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1aa7ffe403b470babf6502356d23c04060" kindref="member">ledModeOne</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Manage<sp/>the<sp/>second<sp/>LED<sp/>animation,<sp/>LED<sp/>burst</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a08e07c58289097544c41d4e0628de985" kindref="member">checkButton</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Manage<sp/>the<sp/>button<sp/>actions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a8e28a0a1cb57ee8bdfd7a1f0b97c4de5" kindref="member">serialTx</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Transmit<sp/>data<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a5e58375e9fc0e68cb465caac92184aa0" kindref="member">serialRx</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Receive<sp/>data<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a4d304c8c5a641e40f3eef66fead2a640" kindref="member">getChar</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Gets<sp/>the<sp/>firs<sp/>character,<sp/>give<sp/>us<sp/>the<sp/>option<sp/>to<sp/>be<sp/>changed(M-&gt;<sp/>LEDMODE,<sp/>R-&gt;<sp/>Rep<sp/>amount)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_arduino_int_8c_1a1ae21cf34eb6bd3217e4e2d05b39a40d" kindref="member">getBuffChar</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/><sp/></highlight><highlight class="comment">//<sp/>Returns<sp/>the<sp/>buffer<sp/>received<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a24aa7c7d0990c654b0f0e0b13f78a891" kindref="member">selectionMode</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight><highlight class="comment">//<sp/>Select<sp/>the<sp/>current<sp/>animation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1ad16f6fa0938b9ccd64529543ca9f76ed" kindref="member">buffChar</ref>[<ref refid="_arduino_int_8c_1a739a2a1a0047c98ac1b18ecd25dac092" kindref="member">RX_BUFFER_SIZE</ref><sp/>-<sp/>1];</highlight><highlight class="comment">//<sp/>Char<sp/>with<sp/>the<sp/>value<sp/>to<sp/>change</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a52965a1c4f6d34e3a0afaa0133a8754e" kindref="member">rxBuffer</ref>[<ref refid="_arduino_int_8c_1a739a2a1a0047c98ac1b18ecd25dac092" kindref="member">RX_BUFFER_SIZE</ref>];<sp/><sp/></highlight><highlight class="comment">//<sp/>Structure<sp/>that<sp/>contain<sp/>the<sp/>data<sp/>(Buffer)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">uint8_t<sp/><ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref><sp/>=<sp/>0;<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Read<sp/>position<sp/>on<sp/>the<sp/>Buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">uint8_t<sp/><ref refid="_arduino_int_8c_1afd425c235e3779872807b8b7851946c3" kindref="member">rxWritePos</ref><sp/>=<sp/>0;<sp/><sp/></highlight><highlight class="comment">//<sp/>Write<sp/>position<sp/>on<sp/>the<sp/>Buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1aa49977b39cb1b9c4a914910334a2b1e9" kindref="member">LEDMODE</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>LEDMODE<sp/>animation,<sp/>can<sp/>be<sp/>0<sp/>or<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a2f00310030be20894871600cfef90f1d" kindref="member">BUTTONSTATUS</ref><sp/>=<sp/>0;<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Status<sp/>of<sp/>the<sp/>button<sp/>(pressed<sp/>or<sp/>not)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1ab8dffa88e0bf425389840503d2068bf8" kindref="member">rep</ref><sp/>=<sp/>1;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Amount<sp/>of<sp/>repetitions<sp/>of<sp/>the<sp/>Burst<sp/>Mode<sp/>(Mode<sp/>One)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment">*<sp/>@brief<sp/>The<sp/>Firmware<sp/>initialization<sp/>function,<sp/>It<sp/>keeps<sp/>running,<sp/>waiting<sp/>interactions</highlight></codeline>
+<codeline lineno="41"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>with<sp/>the<sp/>Arduino<sp/>such<sp/>as<sp/>pressing<sp/>the<sp/>button,<sp/>change<sp/>the<sp/>LEDMODE,<sp/>or<sp/>change<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>the<sp/>number<sp/>of<sp/>repetitions<sp/>of<sp/>the<sp/>burst<sp/>mode.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Don&apos;t<sp/>have<sp/>return<sp/>statement<sp/>and<sp/>don&apos;t<sp/>receive<sp/>parameters.</highlight></codeline>
+<codeline lineno="44"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1acdef7a1fd863a6d3770c1268cb06add3" kindref="member">main</ref>(){</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>bit_is_set(PINB,0);<sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>Macro<sp/>Test<sp/>whether<sp/>bit<sp/>bit<sp/>in<sp/>IO<sp/>register<sp/>sfr<sp/>is<sp/>set.<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1)<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="_arduino_int_8c_1a08e07c58289097544c41d4e0628de985" kindref="member">checkButton</ref>()<sp/>==<sp/>1){<sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>button<sp/>was<sp/>pressed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a8e28a0a1cb57ee8bdfd7a1f0b97c4de5" kindref="member">serialTx</ref>();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a5e58375e9fc0e68cb465caac92184aa0" kindref="member">serialRx</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a24aa7c7d0990c654b0f0e0b13f78a891" kindref="member">selectionMode</ref>();<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a24aa7c7d0990c654b0f0e0b13f78a891" kindref="member">selectionMode</ref>(){</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a8e28a0a1cb57ee8bdfd7a1f0b97c4de5" kindref="member">serialTx</ref>();</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a5e58375e9fc0e68cb465caac92184aa0" kindref="member">serialRx</ref>();</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_arduino_int_8c_1aa49977b39cb1b9c4a914910334a2b1e9" kindref="member">LEDMODE</ref><sp/>==<sp/>0){</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1aa7488c25c825c6e1a7d7618254c8e77a" kindref="member">ledModeZero</ref>();</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_arduino_int_8c_1aa49977b39cb1b9c4a914910334a2b1e9" kindref="member">LEDMODE</ref><sp/>==<sp/>1){</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1aa7ffe403b470babf6502356d23c04060" kindref="member">ledModeOne</ref>();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">*@brief<sp/>Manage<sp/>the<sp/>first<sp/>LEDMODE<sp/>(mode<sp/>zero),<sp/>this<sp/>mode<sp/>turn<sp/>on<sp/>the<sp/>LEDs<sp/>when<sp/>the<sp/>button</highlight></codeline>
+<codeline lineno="69"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>is<sp/>pressed<sp/>and<sp/>then<sp/>turn<sp/>off<sp/>the<sp/>LEDs.</highlight></codeline>
+<codeline lineno="70"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>method<sp/>don&apos;t<sp/>have<sp/>return<sp/>statement<sp/>and<sp/>don&apos;t<sp/>receive<sp/>parameters.</highlight></codeline>
+<codeline lineno="71"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1aa7488c25c825c6e1a7d7618254c8e77a" kindref="member">ledModeZero</ref>(){</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>DDRB<sp/>=<sp/>0b00111001;<sp/></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>PORTB<sp/>=<sp/>0b00111000;<sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>ON<sp/>the<sp/>LEDs<sp/>in<sp/>the<sp/>PINs<sp/>11,<sp/>12<sp/>and<sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>_delay_ms(40);<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Make<sp/>a<sp/>delay<sp/>time</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>PORTB<sp/>=<sp/>0b00000000;<sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>OFF<sp/>all<sp/>the<sp/>LEDs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="80"><highlight class="comment">*<sp/>@brief<sp/>Manage<sp/>the<sp/>second<sp/>LEDMODE<sp/>(mode<sp/>one),<sp/>this<sp/>mode<sp/>make<sp/>a<sp/>LEDs<sp/>burst,<sp/>turning<sp/>on<sp/>and<sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>off<sp/>each<sp/>LED<sp/>sequentially<sp/>and<sp/>repeating<sp/>the<sp/>&quot;animation&quot;<sp/>the<sp/>number<sp/>indicated,<sp/>by<sp/></highlight></codeline>
+<codeline lineno="82"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>default<sp/>is<sp/>one.</highlight></codeline>
+<codeline lineno="83"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>method<sp/>don&apos;t<sp/>have<sp/>return<sp/>statement<sp/>and<sp/>don&apos;t<sp/>receive<sp/>parameters.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1aa7ffe403b470babf6502356d23c04060" kindref="member">ledModeOne</ref>(){</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/><sp/></highlight><highlight class="comment">//<sp/>Valiable<sp/>for<sp/>loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>DDRB<sp/>=<sp/>0b00111001;<sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(i<sp/>&lt;<sp/><ref refid="_arduino_int_8c_1ab8dffa88e0bf425389840503d2068bf8" kindref="member">rep</ref>){</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PORTB<sp/>=<sp/>0b00100000;<sp/><sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>ON<sp/>only<sp/>the<sp/>LED<sp/>at<sp/>pin<sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_delay_ms(<ref refid="_arduino_int_8c_1a9dcc454a4d70498138f21035a2bf36b9" kindref="member">delayTime</ref>);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PORTB<sp/>=<sp/>0b00010000;<sp/><sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>ON<sp/>only<sp/>the<sp/>LED<sp/>at<sp/>pin<sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_delay_ms(<ref refid="_arduino_int_8c_1a9dcc454a4d70498138f21035a2bf36b9" kindref="member">delayTime</ref>);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PORTB<sp/>=<sp/>0b00001000;<sp/><sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>ON<sp/>only<sp/>the<sp/>LED<sp/>at<sp/>pin<sp/>11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_delay_ms(<ref refid="_arduino_int_8c_1a9dcc454a4d70498138f21035a2bf36b9" kindref="member">delayTime</ref>);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>PORTB<sp/>=<sp/>0b00000000;<sp/><sp/></highlight><highlight class="comment">//<sp/>Turn<sp/>OFF<sp/>all<sp/>the<sp/>LEDs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="101"><highlight class="comment">*<sp/>@brief<sp/><sp/>Manage<sp/>the<sp/>interactions<sp/>with<sp/>the<sp/>button,<sp/>if<sp/>the<sp/>button<sp/>is<sp/>pressed<sp/>initialize<sp/>the<sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>LEDs<sp/>animation,<sp/>depending<sp/>the<sp/>LEDMODE</highlight></codeline>
+<codeline lineno="103"><highlight class="comment">*<sp/>@return<sp/>If<sp/>the<sp/>button<sp/>was<sp/>pressed<sp/>return<sp/>1,<sp/>else<sp/>return<sp/>0</highlight></codeline>
+<codeline lineno="104"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a08e07c58289097544c41d4e0628de985" kindref="member">checkButton</ref>(){</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(PINB<sp/>==<sp/>1<sp/>&amp;&amp;<sp/>!<ref refid="_arduino_int_8c_1a2f00310030be20894871600cfef90f1d" kindref="member">BUTTONSTATUS</ref>){<sp/><sp/></highlight><highlight class="comment">//<sp/>PINB<sp/>=<sp/>1<sp/>means<sp/>the<sp/>button<sp/>is<sp/>being<sp/>pressed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a2f00310030be20894871600cfef90f1d" kindref="member">BUTTONSTATUS</ref>=1;<sp/><sp/></highlight><highlight class="comment">//<sp/>Button<sp/>was<sp/>pressed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;<sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!PINB<sp/>&amp;&amp;<sp/><ref refid="_arduino_int_8c_1a2f00310030be20894871600cfef90f1d" kindref="member">BUTTONSTATUS</ref>){<sp/><sp/></highlight><highlight class="comment">//<sp/>PINB<sp/>=<sp/>0<sp/>means<sp/>the<sp/>button<sp/>isn&apos;t<sp/>pressed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a2f00310030be20894871600cfef90f1d" kindref="member">BUTTONSTATUS</ref><sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>button<sp/>was<sp/>released</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="117"><highlight class="comment">*<sp/>@brief<sp/>Manage<sp/>the<sp/>data<sp/>transmission<sp/>by<sp/>serial<sp/>port,<sp/>from<sp/>the<sp/>arduino</highlight></codeline>
+<codeline lineno="118"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>method<sp/>don&apos;t<sp/>have<sp/>return<sp/>statement<sp/>and<sp/>don&apos;t<sp/>receive<sp/>parameters.</highlight></codeline>
+<codeline lineno="119"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a8e28a0a1cb57ee8bdfd7a1f0b97c4de5" kindref="member">serialTx</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>DDRB<sp/>=<sp/>0b00111001;<sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>UBRR0H<sp/>=<sp/>(<ref refid="_arduino_int_8c_1a91cf1c8bed2b5667f322c71ac83e8294" kindref="member">BRC</ref><sp/>&gt;&gt;<sp/>8);<sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>baud<sp/>rate<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>UBRR0L<sp/>=<sp/><ref refid="_arduino_int_8c_1a91cf1c8bed2b5667f322c71ac83e8294" kindref="member">BRC</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>baud<sp/>rate<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>UCSR0B<sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>TXEN0)<sp/><sp/>|<sp/>(1<sp/>&lt;&lt;<sp/>TXCIE0);;</highlight><highlight class="comment">//<sp/>Enable<sp/>receiver<sp/>and<sp/>transmitter<sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>UCSR0C<sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>UCSZ01)<sp/>|<sp/>(1<sp/>&lt;&lt;<sp/>UCSZ00);<sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>frame<sp/>format:<sp/>8data,<sp/>2stop<sp/>bit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>UDR0<sp/>=<sp/></highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>char<sp/>to<sp/>be<sp/>sent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">/*<sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="comment">*<sp/>@brief<sp/>Manage<sp/>the<sp/>data<sp/>reception<sp/>by<sp/>serial<sp/>port,<sp/>from<sp/>the<sp/>arduino</highlight></codeline>
+<codeline lineno="131"><highlight class="comment">*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>This<sp/>method<sp/>don&apos;t<sp/>have<sp/>return<sp/>statement<sp/>and<sp/>don&apos;t<sp/>receive<sp/>parameters.</highlight></codeline>
+<codeline lineno="132"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a5e58375e9fc0e68cb465caac92184aa0" kindref="member">serialRx</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Set<sp/>baud<sp/>rate<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>UBRR0H<sp/>=<sp/>(<ref refid="_arduino_int_8c_1a91cf1c8bed2b5667f322c71ac83e8294" kindref="member">BRC</ref><sp/>&gt;&gt;<sp/>8);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>UBRR0L<sp/>=<sp/><sp/><ref refid="_arduino_int_8c_1a91cf1c8bed2b5667f322c71ac83e8294" kindref="member">BRC</ref>;<sp/></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*Enable<sp/>receiver<sp/>and<sp/>transmitter<sp/>*/</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>UCSR0B<sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>RXEN0)<sp/><sp/>|<sp/>(1<sp/>&lt;&lt;<sp/>RXCIE0);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Set<sp/>frame<sp/>format:<sp/>8data,<sp/>2stop<sp/>bit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>UCSR0C<sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>UCSZ01)<sp/>|<sp/>(1<sp/>&lt;&lt;<sp/>UCSZ00);<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>DDRB<sp/>=<sp/>(1<sp/>&lt;&lt;<sp/>PORTB0);<sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>Port<sp/>B<sp/>Data<sp/>Direction<sp/>Register</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>sei();<sp/><sp/></highlight><highlight class="comment">//<sp/>Instruction<sp/>to<sp/>enable<sp/>interrupts</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>first<sp/>=<sp/><ref refid="_arduino_int_8c_1a4d304c8c5a641e40f3eef66fead2a640" kindref="member">getChar</ref>();<sp/></highlight><highlight class="comment">//<sp/>Get<sp/>first<sp/>char<sp/>from<sp/>getChar<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>second<sp/>=<sp/><ref refid="_arduino_int_8c_1a4d304c8c5a641e40f3eef66fead2a640" kindref="member">getChar</ref>();</highlight><highlight class="comment">//<sp/>Get<sp/>second<sp/>char<sp/>from<sp/>getChar<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(first<sp/>==<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">){<sp/></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(second<sp/>==<sp/></highlight><highlight class="charliteral">&apos;1&apos;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1aa49977b39cb1b9c4a914910334a2b1e9" kindref="member">LEDMODE</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(second<sp/>==<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1aa49977b39cb1b9c4a914910334a2b1e9" kindref="member">LEDMODE</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/><sp/><sp/><sp/>if(first<sp/>==<sp/>&apos;1&apos;){<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rep<sp/>=<sp/>second;<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/><sp/><sp/><sp/>}*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="158"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="161"><highlight class="comment">*<sp/>@brief<sp/>Get<sp/>the<sp/>character<sp/>of<sp/>the<sp/>buffer<sp/>received<sp/>by<sp/>serial<sp/>port</highlight></codeline>
+<codeline lineno="162"><highlight class="comment">*<sp/>@return<sp/>The<sp/>last<sp/>caracter<sp/>received<sp/>in<sp/>the<sp/>buffer</highlight></codeline>
+<codeline lineno="163"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1a4d304c8c5a641e40f3eef66fead2a640" kindref="member">getChar</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>ret<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;<sp/><sp/></highlight><highlight class="comment">//<sp/>Reset<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref><sp/>!=<sp/><ref refid="_arduino_int_8c_1afd425c235e3779872807b8b7851946c3" kindref="member">rxWritePos</ref>){<sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Taking<sp/>care<sp/>that<sp/>the<sp/>positions<sp/>aren&apos;t<sp/>the<sp/>same</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ret<sp/>=<sp/><ref refid="_arduino_int_8c_1a52965a1c4f6d34e3a0afaa0133a8754e" kindref="member">rxBuffer</ref>[<ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref>];<sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>de<sp/>character<sp/>readed<sp/>in<sp/>the<sp/>buffer<sp/>to<sp/>the<sp/>variable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref>++;<sp/><sp/></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref><sp/>&gt;=<sp/><ref refid="_arduino_int_8c_1a739a2a1a0047c98ac1b18ecd25dac092" kindref="member">RX_BUFFER_SIZE</ref>){<sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>of<sp/>te<sp/>Buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ret;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="_arduino_int_8c_1a1ae21cf34eb6bd3217e4e2d05b39a40d" kindref="member">getBuffChar</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1ad16f6fa0938b9ccd64529543ca9f76ed" kindref="member">buffChar</ref>[0]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref><sp/>!=<sp/><ref refid="_arduino_int_8c_1afd425c235e3779872807b8b7851946c3" kindref="member">rxWritePos</ref>){</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref><sp/>&gt;=<sp/><ref refid="_arduino_int_8c_1a739a2a1a0047c98ac1b18ecd25dac092" kindref="member">RX_BUFFER_SIZE</ref>){<sp/><sp/></highlight><highlight class="comment">//<sp/>End<sp/>of<sp/>te<sp/>Buffer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1ad16f6fa0938b9ccd64529543ca9f76ed" kindref="member">buffChar</ref>[0]<sp/>=<sp/><ref refid="_arduino_int_8c_1a52965a1c4f6d34e3a0afaa0133a8754e" kindref="member">rxBuffer</ref>[<ref refid="_arduino_int_8c_1a4c0484c0669ddd94e1c7b26fd58427a2" kindref="member">rxReadPos</ref>];</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="_arduino_int_8c_1ad16f6fa0938b9ccd64529543ca9f76ed" kindref="member">buffChar</ref>;<sp/></highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="189"><highlight class="comment">*<sp/>@brief<sp/>Receive<sp/></highlight></codeline>
+<codeline lineno="190"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><ref refid="_arduino_int_8c_1a09ce999e15ad60b8a3f07d08af1946f9" kindref="member">ISR</ref>(USART_RX_vect){</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1a52965a1c4f6d34e3a0afaa0133a8754e" kindref="member">rxBuffer</ref>[<ref refid="_arduino_int_8c_1afd425c235e3779872807b8b7851946c3" kindref="member">rxWritePos</ref>]<sp/>=<sp/>UDR0;<sp/><sp/></highlight><highlight class="comment">//<sp/>Write<sp/>the<sp/>data<sp/>received<sp/>by<sp/>the<sp/>UDR0<sp/>(USART<sp/>I/O<sp/>Data<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Register<sp/>#0)<sp/>in<sp/>the<sp/>buffer<sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1afd425c235e3779872807b8b7851946c3" kindref="member">rxWritePos</ref>++;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="_arduino_int_8c_1afd425c235e3779872807b8b7851946c3" kindref="member">rxWritePos</ref><sp/>&gt;=<sp/><ref refid="_arduino_int_8c_1a739a2a1a0047c98ac1b18ecd25dac092" kindref="member">RX_BUFFER_SIZE</ref>)<sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>the<sp/>buffer<sp/>is<sp/>full<sp/>overwrite<sp/>the<sp/>last<sp/>data</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="_arduino_int_8c_1afd425c235e3779872807b8b7851946c3" kindref="member">rxWritePos</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/ArduinoInt.c"/>
+  </compounddef>
+</doxygen>

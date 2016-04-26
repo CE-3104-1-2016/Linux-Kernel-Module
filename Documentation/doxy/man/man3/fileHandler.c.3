@@ -1,0 +1,83 @@
+.TH "Program/fileHandler.c" 3 "Sat Mar 26 2016" "Version 1.0" "Linux Kernel Module" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Program/fileHandler.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <linux/kernel\&.h>\fP
+.br
+\fC#include <linux/init\&.h>\fP
+.br
+\fC#include <linux/module\&.h>\fP
+.br
+\fC#include <linux/syscalls\&.h>\fP
+.br
+\fC#include <linux/file\&.h>\fP
+.br
+\fC#include <linux/fs\&.h>\fP
+.br
+\fC#include <linux/fcntl\&.h>\fP
+.br
+\fC#include <asm/uaccess\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "struct file * \fBfile_open\fP (char *location)"
+.br
+.RI "\fIMethod to open the file in a location\&. \fP"
+.ti -1c
+.RI "int \fBfile_close\fP (struct file *oFile)"
+.br
+.RI "\fIMethod to open the file in a location\&. \fP"
+.ti -1c
+.RI "int \fBfile_write\fP (struct file *oFile, char *buffer, int count)"
+.br
+.RI "\fIMethod to open the file in a location\&. \fP"
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int file_close (struct file *oFile)"
+
+.PP
+Method to open the file in a location\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoFile\fP a struct with the file to read the buffer 
+.RE
+.PP
+
+.SS "struct file* file_open (char *location)"
+
+.PP
+Method to open the file in a location\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlocation\fP a char with the location of the file 
+.RE
+.PP
+
+.SS "int file_write (struct file *oFile, char *buffer, intcount)"
+
+.PP
+Method to open the file in a location\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoFile\fP a struct with the file to read the buffer 
+.br
+\fIbuffer\fP a pointer to char with the data will be store 
+.br
+\fIcount\fP the int that represent the size of the buffer 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Linux Kernel Module from the source code\&.

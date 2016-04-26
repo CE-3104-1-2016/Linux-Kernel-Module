@@ -1,0 +1,78 @@
+\section{Program/file\-Handler.c File Reference}
+\label{file_handler_8c}\index{Program/file\-Handler.\-c@{Program/file\-Handler.\-c}}
+{\ttfamily \#include $<$linux/kernel.\-h$>$}\\*
+{\ttfamily \#include $<$linux/init.\-h$>$}\\*
+{\ttfamily \#include $<$linux/module.\-h$>$}\\*
+{\ttfamily \#include $<$linux/syscalls.\-h$>$}\\*
+{\ttfamily \#include $<$linux/file.\-h$>$}\\*
+{\ttfamily \#include $<$linux/fs.\-h$>$}\\*
+{\ttfamily \#include $<$linux/fcntl.\-h$>$}\\*
+{\ttfamily \#include $<$asm/uaccess.\-h$>$}\\*
+Include dependency graph for file\-Handler.\-c\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct file $\ast$ {\bf file\-\_\-open} (char $\ast$location)
+\begin{DoxyCompactList}\small\item\em Method to open the file in a location. \end{DoxyCompactList}\item 
+int {\bf file\-\_\-close} (struct file $\ast$o\-File)
+\begin{DoxyCompactList}\small\item\em Method to open the file in a location. \end{DoxyCompactList}\item 
+int {\bf file\-\_\-write} (struct file $\ast$o\-File, char $\ast$buffer, int count)
+\begin{DoxyCompactList}\small\item\em Method to open the file in a location. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{file\-Handler.\-c@{file\-Handler.\-c}!file\-\_\-close@{file\-\_\-close}}
+\index{file\-\_\-close@{file\-\_\-close}!fileHandler.c@{file\-Handler.\-c}}
+\subsubsection[{file\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}int file\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{struct file $\ast$}]{o\-File}
+\end{DoxyParamCaption}
+)}\label{file_handler_8c_ab9185f3cebd9ae7fd0816abac26352e3}
+
+
+Method to open the file in a location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\-File} & a struct with the file to read the buffer \\
+\hline
+\end{DoxyParams}
+\index{file\-Handler.\-c@{file\-Handler.\-c}!file\-\_\-open@{file\-\_\-open}}
+\index{file\-\_\-open@{file\-\_\-open}!fileHandler.c@{file\-Handler.\-c}}
+\subsubsection[{file\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}struct file$\ast$ file\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{location}
+\end{DoxyParamCaption}
+)}\label{file_handler_8c_a892cd60a3a9cfd2df7364b2f4696e6b1}
+
+
+Method to open the file in a location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & a char with the location of the file \\
+\hline
+\end{DoxyParams}
+\index{file\-Handler.\-c@{file\-Handler.\-c}!file\-\_\-write@{file\-\_\-write}}
+\index{file\-\_\-write@{file\-\_\-write}!fileHandler.c@{file\-Handler.\-c}}
+\subsubsection[{file\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}int file\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{struct file $\ast$}]{o\-File, }
+\item[{char $\ast$}]{buffer, }
+\item[{int}]{count}
+\end{DoxyParamCaption}
+)}\label{file_handler_8c_abd392bd9547474451292a96b2bf328ba}
+
+
+Method to open the file in a location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em o\-File} & a struct with the file to read the buffer \\
+\hline
+{\em buffer} & a pointer to char with the data will be store \\
+\hline
+{\em count} & the int that represent the size of the buffer \\
+\hline
+\end{DoxyParams}

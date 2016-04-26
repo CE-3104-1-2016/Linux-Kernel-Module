@@ -1,0 +1,96 @@
+\section{Program/\-Arduino\-L\-K\-M.c File Reference}
+\label{_arduino_l_k_m_8c}\index{Program/\-Arduino\-L\-K\-M.\-c@{Program/\-Arduino\-L\-K\-M.\-c}}
+
+
+A kernel module for controlling a arduino led project has 2 modes, flash or burst, (suports interruptions) and can be modified on linux user space with echo.  
+
+
+{\ttfamily \#include $<$linux/init.\-h$>$}\\*
+{\ttfamily \#include $<$linux/module.\-h$>$}\\*
+{\ttfamily \#include $<$linux/kernel.\-h$>$}\\*
+{\ttfamily \#include $<$linux/kobject.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}file\-Handler.\-c\char`\"{}}\\*
+Include dependency graph for Arduino\-L\-K\-M.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf M\-O\-D\-U\-L\-E\-\_\-\-L\-I\-C\-E\-N\-S\-E} (\char`\"{}G\-P\-L\char`\"{})
+\item 
+{\bf M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R} (\char`\"{}Malcolm Davis\char`\"{})
+\item 
+{\bf M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R} (\char`\"{}Arturo Chinchilla\char`\"{})
+\item 
+{\bf M\-O\-D\-U\-L\-E\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N} (\char`\"{}L\-K\-M for Linux 3.x which will be written in pure C and interact with an Arduino device.\char`\"{})
+\item 
+{\bf M\-O\-D\-U\-L\-E\-\_\-\-V\-E\-R\-S\-I\-O\-N} (\char`\"{}0.\-5\char`\"{})
+\item 
+{\bf module\-\_\-init} (arduino\-L\-K\-M\-\_\-init)
+\item 
+{\bf module\-\_\-exit} (arduino\-L\-K\-M\-\_\-exit)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A kernel module for controlling a arduino led project has 2 modes, flash or burst, (suports interruptions) and can be modified on linux user space with echo. \begin{DoxyAuthor}{Author}
+Malcolm Davis 
+
+Arturo Chinchilla 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 23 2015 
+\end{DoxyDate}
+\begin{DoxySeeAlso}{See Also}
+{\tt https\-://github.\-com/\-L\-K\-M\-Investigation/\-Linux-\/\-Kernel-\/\-Module} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\index{Arduino\-L\-K\-M.\-c@{Arduino\-L\-K\-M.\-c}!M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R@{M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R}}
+\index{M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R@{M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R}!ArduinoLKM.c@{Arduino\-L\-K\-M.\-c}}
+\subsubsection[{M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Malcolm Davis\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_l_k_m_8c_ad5eacd749330408d3e2de4eb7ad60245}
+\index{Arduino\-L\-K\-M.\-c@{Arduino\-L\-K\-M.\-c}!M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R@{M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R}}
+\index{M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R@{M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R}!ArduinoLKM.c@{Arduino\-L\-K\-M.\-c}}
+\subsubsection[{M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}M\-O\-D\-U\-L\-E\-\_\-\-A\-U\-T\-H\-O\-R (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}Arturo Chinchilla\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_l_k_m_8c_a1f4e58679711fc4e6bfaa31fc4f7f197}
+\index{Arduino\-L\-K\-M.\-c@{Arduino\-L\-K\-M.\-c}!M\-O\-D\-U\-L\-E\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N@{M\-O\-D\-U\-L\-E\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N}}
+\index{M\-O\-D\-U\-L\-E\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N@{M\-O\-D\-U\-L\-E\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N}!ArduinoLKM.c@{Arduino\-L\-K\-M.\-c}}
+\subsubsection[{M\-O\-D\-U\-L\-E\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}M\-O\-D\-U\-L\-E\-\_\-\-D\-E\-S\-C\-R\-I\-P\-T\-I\-O\-N (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}L\-K\-M for Linux 3.x which will be written in pure C and interact with an Arduino device.\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_l_k_m_8c_a2db0e397a40e3bf401d01c9b455df68f}
+\index{Arduino\-L\-K\-M.\-c@{Arduino\-L\-K\-M.\-c}!module\-\_\-exit@{module\-\_\-exit}}
+\index{module\-\_\-exit@{module\-\_\-exit}!ArduinoLKM.c@{Arduino\-L\-K\-M.\-c}}
+\subsubsection[{module\-\_\-exit}]{\setlength{\rightskip}{0pt plus 5cm}module\-\_\-exit (
+\begin{DoxyParamCaption}
+\item[{arduino\-L\-K\-M\-\_\-exit}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_l_k_m_8c_adfccffbae6462d3e283603217a7e2559}
+\index{Arduino\-L\-K\-M.\-c@{Arduino\-L\-K\-M.\-c}!module\-\_\-init@{module\-\_\-init}}
+\index{module\-\_\-init@{module\-\_\-init}!ArduinoLKM.c@{Arduino\-L\-K\-M.\-c}}
+\subsubsection[{module\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}module\-\_\-init (
+\begin{DoxyParamCaption}
+\item[{arduino\-L\-K\-M\-\_\-init}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_l_k_m_8c_a0c1f4008f8b2896e77d4c9985f8d379d}
+\index{Arduino\-L\-K\-M.\-c@{Arduino\-L\-K\-M.\-c}!M\-O\-D\-U\-L\-E\-\_\-\-L\-I\-C\-E\-N\-S\-E@{M\-O\-D\-U\-L\-E\-\_\-\-L\-I\-C\-E\-N\-S\-E}}
+\index{M\-O\-D\-U\-L\-E\-\_\-\-L\-I\-C\-E\-N\-S\-E@{M\-O\-D\-U\-L\-E\-\_\-\-L\-I\-C\-E\-N\-S\-E}!ArduinoLKM.c@{Arduino\-L\-K\-M.\-c}}
+\subsubsection[{M\-O\-D\-U\-L\-E\-\_\-\-L\-I\-C\-E\-N\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}M\-O\-D\-U\-L\-E\-\_\-\-L\-I\-C\-E\-N\-S\-E (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}G\-P\-L\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_l_k_m_8c_ad94b36675e7eb067ea3ce6ff9e244a44}
+\index{Arduino\-L\-K\-M.\-c@{Arduino\-L\-K\-M.\-c}!M\-O\-D\-U\-L\-E\-\_\-\-V\-E\-R\-S\-I\-O\-N@{M\-O\-D\-U\-L\-E\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{M\-O\-D\-U\-L\-E\-\_\-\-V\-E\-R\-S\-I\-O\-N@{M\-O\-D\-U\-L\-E\-\_\-\-V\-E\-R\-S\-I\-O\-N}!ArduinoLKM.c@{Arduino\-L\-K\-M.\-c}}
+\subsubsection[{M\-O\-D\-U\-L\-E\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}M\-O\-D\-U\-L\-E\-\_\-\-V\-E\-R\-S\-I\-O\-N (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}0.\-5\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_l_k_m_8c_a94716498ea965ce9e6e3bc9163843b65}

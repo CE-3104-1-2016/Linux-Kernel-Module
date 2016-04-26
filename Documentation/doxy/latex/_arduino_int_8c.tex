@@ -1,0 +1,195 @@
+\section{Program/\-Arduino\-Int/\-Arduino\-Int.c File Reference}
+\label{_arduino_int_8c}\index{Program/\-Arduino\-Int/\-Arduino\-Int.\-c@{Program/\-Arduino\-Int/\-Arduino\-Int.\-c}}
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$util/delay.\-h$>$}\\*
+{\ttfamily \#include $<$stdbool.\-h$>$}\\*
+{\ttfamily \#include $<$avr/interrupt.\-h$>$}\\*
+Include dependency graph for Arduino\-Int.\-c\-:
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf delay\-Time}~250
+\item 
+\#define {\bf F\-\_\-\-C\-P\-U}~16000000
+\item 
+\#define {\bf B\-U\-A\-D}~9600
+\item 
+\#define {\bf B\-R\-C}~(({\bf F\-\_\-\-C\-P\-U}/16/{\bf B\-U\-A\-D})-\/1)
+\item 
+\#define {\bf R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~128
+\item 
+\#define {\bf cbi}(sfr, bit)~(\-\_\-\-S\-F\-R\-\_\-\-B\-Y\-T\-E(sfr) \&= $\sim$\-\_\-\-B\-V(bit))
+\item 
+\#define {\bf sbi}(sfr, bit)~(\-\_\-\-S\-F\-R\-\_\-\-B\-Y\-T\-E(sfr) $\vert$= \-\_\-\-B\-V(bit))
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf led\-Mode\-Zero} (void)
+\item 
+void {\bf led\-Mode\-One} (void)
+\item 
+int {\bf check\-Button} (void)
+\item 
+void {\bf serial\-Tx} (void)
+\item 
+void {\bf serial\-Rx} (void)
+\item 
+char {\bf get\-Char} (void)
+\item 
+char $\ast$ {\bf get\-Buff\-Char} (void)
+\item 
+void {\bf selection\-Mode} (void)
+\item 
+void {\bf main} ()
+\item 
+{\bf I\-S\-R} (U\-S\-A\-R\-T\-\_\-\-R\-X\-\_\-vect)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char {\bf buff\-Char} [{\bf R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}-\/1]
+\item 
+char {\bf rx\-Buffer} [{\bf R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]
+\item 
+uint8\-\_\-t {\bf rx\-Read\-Pos} = 0
+\item 
+uint8\-\_\-t {\bf rx\-Write\-Pos} = 0
+\item 
+bool {\bf L\-E\-D\-M\-O\-D\-E} = 0
+\item 
+bool {\bf B\-U\-T\-T\-O\-N\-S\-T\-A\-T\-U\-S} = 0
+\item 
+int {\bf rep} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!B\-R\-C@{B\-R\-C}}
+\index{B\-R\-C@{B\-R\-C}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{B\-R\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-R\-C~(({\bf F\-\_\-\-C\-P\-U}/16/{\bf B\-U\-A\-D})-\/1)}\label{_arduino_int_8c_a91cf1c8bed2b5667f322c71ac83e8294}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!B\-U\-A\-D@{B\-U\-A\-D}}
+\index{B\-U\-A\-D@{B\-U\-A\-D}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{B\-U\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-U\-A\-D~9600}\label{_arduino_int_8c_aff614bd47a8855bb6df5a611ff68e39f}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!cbi@{cbi}}
+\index{cbi@{cbi}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{cbi}]{\setlength{\rightskip}{0pt plus 5cm}\#define cbi(
+\begin{DoxyParamCaption}
+\item[{}]{sfr, }
+\item[{}]{bit}
+\end{DoxyParamCaption}
+)~(\-\_\-\-S\-F\-R\-\_\-\-B\-Y\-T\-E(sfr) \&= $\sim$\-\_\-\-B\-V(bit))}\label{_arduino_int_8c_ae70baf5399951da1e7ad45a0ed890832}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!delay\-Time@{delay\-Time}}
+\index{delay\-Time@{delay\-Time}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{delay\-Time}]{\setlength{\rightskip}{0pt plus 5cm}\#define delay\-Time~250}\label{_arduino_int_8c_a9dcc454a4d70498138f21035a2bf36b9}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!F\-\_\-\-C\-P\-U@{F\-\_\-\-C\-P\-U}}
+\index{F\-\_\-\-C\-P\-U@{F\-\_\-\-C\-P\-U}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{F\-\_\-\-C\-P\-U}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-\_\-\-C\-P\-U~16000000}\label{_arduino_int_8c_a43bafb28b29491ec7f871319b5a3b2f8}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~128}\label{_arduino_int_8c_a739a2a1a0047c98ac1b18ecd25dac092}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!sbi@{sbi}}
+\index{sbi@{sbi}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{sbi}]{\setlength{\rightskip}{0pt plus 5cm}\#define sbi(
+\begin{DoxyParamCaption}
+\item[{}]{sfr, }
+\item[{}]{bit}
+\end{DoxyParamCaption}
+)~(\-\_\-\-S\-F\-R\-\_\-\-B\-Y\-T\-E(sfr) $\vert$= \-\_\-\-B\-V(bit))}\label{_arduino_int_8c_ac4a5536d9bf092116f88b94797ddc882}
+
+
+\subsection{Function Documentation}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!check\-Button@{check\-Button}}
+\index{check\-Button@{check\-Button}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{check\-Button}]{\setlength{\rightskip}{0pt plus 5cm}int check\-Button (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_a08e07c58289097544c41d4e0628de985}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!get\-Buff\-Char@{get\-Buff\-Char}}
+\index{get\-Buff\-Char@{get\-Buff\-Char}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{get\-Buff\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ get\-Buff\-Char (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_a1ae21cf34eb6bd3217e4e2d05b39a40d}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!get\-Char@{get\-Char}}
+\index{get\-Char@{get\-Char}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{get\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char get\-Char (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_a4d304c8c5a641e40f3eef66fead2a640}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!I\-S\-R@{I\-S\-R}}
+\index{I\-S\-R@{I\-S\-R}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{I\-S\-R}]{\setlength{\rightskip}{0pt plus 5cm}I\-S\-R (
+\begin{DoxyParamCaption}
+\item[{U\-S\-A\-R\-T\-\_\-\-R\-X\-\_\-vect}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_a09ce999e15ad60b8a3f07d08af1946f9}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!led\-Mode\-One@{led\-Mode\-One}}
+\index{led\-Mode\-One@{led\-Mode\-One}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{led\-Mode\-One}]{\setlength{\rightskip}{0pt plus 5cm}void led\-Mode\-One (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_aa7ffe403b470babf6502356d23c04060}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!led\-Mode\-Zero@{led\-Mode\-Zero}}
+\index{led\-Mode\-Zero@{led\-Mode\-Zero}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{led\-Mode\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}void led\-Mode\-Zero (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_aa7488c25c825c6e1a7d7618254c8e77a}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!main@{main}}
+\index{main@{main}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}void main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_acdef7a1fd863a6d3770c1268cb06add3}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!selection\-Mode@{selection\-Mode}}
+\index{selection\-Mode@{selection\-Mode}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{selection\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}void selection\-Mode (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_a24aa7c7d0990c654b0f0e0b13f78a891}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!serial\-Rx@{serial\-Rx}}
+\index{serial\-Rx@{serial\-Rx}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{serial\-Rx}]{\setlength{\rightskip}{0pt plus 5cm}void serial\-Rx (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_a5e58375e9fc0e68cb465caac92184aa0}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!serial\-Tx@{serial\-Tx}}
+\index{serial\-Tx@{serial\-Tx}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{serial\-Tx}]{\setlength{\rightskip}{0pt plus 5cm}void serial\-Tx (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{_arduino_int_8c_a8e28a0a1cb57ee8bdfd7a1f0b97c4de5}
+
+
+\subsection{Variable Documentation}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!buff\-Char@{buff\-Char}}
+\index{buff\-Char@{buff\-Char}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{buff\-Char}]{\setlength{\rightskip}{0pt plus 5cm}char buff\-Char[{\bf R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}-\/1]}\label{_arduino_int_8c_ad16f6fa0938b9ccd64529543ca9f76ed}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!B\-U\-T\-T\-O\-N\-S\-T\-A\-T\-U\-S@{B\-U\-T\-T\-O\-N\-S\-T\-A\-T\-U\-S}}
+\index{B\-U\-T\-T\-O\-N\-S\-T\-A\-T\-U\-S@{B\-U\-T\-T\-O\-N\-S\-T\-A\-T\-U\-S}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{B\-U\-T\-T\-O\-N\-S\-T\-A\-T\-U\-S}]{\setlength{\rightskip}{0pt plus 5cm}bool B\-U\-T\-T\-O\-N\-S\-T\-A\-T\-U\-S = 0}\label{_arduino_int_8c_a2f00310030be20894871600cfef90f1d}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!L\-E\-D\-M\-O\-D\-E@{L\-E\-D\-M\-O\-D\-E}}
+\index{L\-E\-D\-M\-O\-D\-E@{L\-E\-D\-M\-O\-D\-E}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{L\-E\-D\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}bool L\-E\-D\-M\-O\-D\-E = 0}\label{_arduino_int_8c_aa49977b39cb1b9c4a914910334a2b1e9}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!rep@{rep}}
+\index{rep@{rep}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{rep}]{\setlength{\rightskip}{0pt plus 5cm}int rep = 1}\label{_arduino_int_8c_ab8dffa88e0bf425389840503d2068bf8}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!rx\-Buffer@{rx\-Buffer}}
+\index{rx\-Buffer@{rx\-Buffer}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{rx\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}char rx\-Buffer[{\bf R\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]}\label{_arduino_int_8c_a52965a1c4f6d34e3a0afaa0133a8754e}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!rx\-Read\-Pos@{rx\-Read\-Pos}}
+\index{rx\-Read\-Pos@{rx\-Read\-Pos}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{rx\-Read\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rx\-Read\-Pos = 0}\label{_arduino_int_8c_a4c0484c0669ddd94e1c7b26fd58427a2}
+\index{Arduino\-Int.\-c@{Arduino\-Int.\-c}!rx\-Write\-Pos@{rx\-Write\-Pos}}
+\index{rx\-Write\-Pos@{rx\-Write\-Pos}!ArduinoInt.c@{Arduino\-Int.\-c}}
+\subsubsection[{rx\-Write\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t rx\-Write\-Pos = 0}\label{_arduino_int_8c_afd425c235e3779872807b8b7851946c3}

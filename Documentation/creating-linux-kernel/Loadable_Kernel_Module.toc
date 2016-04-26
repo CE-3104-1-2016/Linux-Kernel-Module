@@ -1,0 +1,18 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {section}{\numberline {2}Development environment}{5}
+\contentsline {subsection}{\numberline {2.1}Overleaf:}{5}
+\contentsline {subsection}{\numberline {2.2}Git and GitHub:}{6}
+\contentsline {subsection}{\numberline {2.3}123D Circuits}{6}
+\contentsline {subsection}{\numberline {2.4}Sublime Text:}{7}
+\contentsline {section}{\numberline {3}Data Structures, functions and libraries}{7}
+\contentsline {section}{\numberline {4}Instructions to use each of the programs}{7}
+\contentsline {subsection}{\numberline {4.1}Arduino}{9}
+\contentsline {subsection}{\numberline {4.2}Arduino LKM}{10}
+\contentsline {section}{\numberline {5}Student Activity Log}{10}
+\contentsline {subsection}{\numberline {5.1}Arturo's Time-Sheet}{11}
+\contentsline {subsection}{\numberline {5.2}Malcolm's Time-Sheet}{12}
+\contentsline {section}{\numberline {6}Project final status}{12}
+\contentsline {subsection}{\numberline {6.1}Issues, Limitations and Challenges}{13}
+\contentsline {subsection}{\numberline {6.2}Know Issues}{13}
+\contentsline {section}{\numberline {7}Conclusions, Suggestions and Recommendations.}{13}

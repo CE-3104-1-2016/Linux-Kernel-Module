@@ -1,0 +1,90 @@
+.TH "Program/ArduinoLKM.c" 3 "Sat Mar 26 2016" "Version 1.0" "Linux Kernel Module" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Program/ArduinoLKM.c \- 
+.PP
+A kernel module for controlling a arduino led project has 2 modes, flash or burst, (suports interruptions) and can be modified on linux user space with echo\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <linux/init\&.h>\fP
+.br
+\fC#include <linux/module\&.h>\fP
+.br
+\fC#include <linux/kernel\&.h>\fP
+.br
+\fC#include <linux/kobject\&.h>\fP
+.br
+\fC#include 'fileHandler\&.c'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMODULE_LICENSE\fP ('GPL')"
+.br
+.ti -1c
+.RI "\fBMODULE_AUTHOR\fP ('Malcolm Davis')"
+.br
+.ti -1c
+.RI "\fBMODULE_AUTHOR\fP ('Arturo Chinchilla')"
+.br
+.ti -1c
+.RI "\fBMODULE_DESCRIPTION\fP ('LKM for Linux 3\&.x which will be written in pure C and interact with an Arduino device\&.')"
+.br
+.ti -1c
+.RI "\fBMODULE_VERSION\fP ('0\&.5')"
+.br
+.ti -1c
+.RI "\fBmodule_init\fP (arduinoLKM_init)"
+.br
+.ti -1c
+.RI "\fBmodule_exit\fP (arduinoLKM_exit)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+A kernel module for controlling a arduino led project has 2 modes, flash or burst, (suports interruptions) and can be modified on linux user space with echo\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Malcolm Davis 
+.PP
+Arturo Chinchilla 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+March 23 2015 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+https://github.com/LKMInvestigation/Linux-Kernel-Module 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "MODULE_AUTHOR ('Malcolm Davis')"
+
+.SS "MODULE_AUTHOR ('Arturo Chinchilla')"
+
+.SS "MODULE_DESCRIPTION ('LKM for Linux 3\&.x which will be written in pure C and interact with an Arduino device\&.')"
+
+.SS "module_exit (arduinoLKM_exit)"
+
+.SS "module_init (arduinoLKM_init)"
+
+.SS "MODULE_LICENSE ('GPL')"
+
+.SS "MODULE_VERSION ('0\&.5')"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Linux Kernel Module from the source code\&.

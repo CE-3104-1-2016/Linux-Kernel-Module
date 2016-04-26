@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="_arduino_l_k_m_8mod_8c" kind="file">
+    <compoundname>ArduinoLKM.mod.c</compoundname>
+    <includes local="no">linux/module.h</includes>
+    <includes local="no">linux/vermagic.h</includes>
+    <includes local="no">linux/compiler.h</includes>
+    <incdepgraph>
+      <node id="57">
+        <label>linux/compiler.h</label>
+      </node>
+      <node id="56">
+        <label>linux/vermagic.h</label>
+      </node>
+      <node id="54">
+        <label>Program/ArduinoLKM.mod.c</label>
+        <link refid="ArduinoLKM.mod.c"/>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>linux/module.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="_arduino_l_k_m_8mod_8c_1a59ae061e50f755cbc9dbde3c6688273a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MODULE_INFO</definition>
+        <argsstring>(vermagic, VERMAGIC_STRING)</argsstring>
+        <name>MODULE_INFO</name>
+        <param>
+          <type>vermagic</type>
+        </param>
+        <param>
+          <type>VERMAGIC_STRING</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoLKM.mod.c" line="5" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_l_k_m_8mod_8c_1acc22bca8fb9ed0433181b5c98efdb5a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>__visible struct module __this_module</type>
+        <definition>__visible struct module __this_module __attribute__</definition>
+        <argsstring>((section(&quot;.gnu.linkonce.this_module&quot;)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(section(&quot;.gnu.linkonce.this_module&quot;))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoLKM.mod.c" line="7" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_l_k_m_8mod_8c_1a3457b560a580904370cd8cbaddb0c902" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const struct modversion_info ____versions[] __used</type>
+        <definition>static const struct modversion_info ____versions [] __used __attribute__</definition>
+        <argsstring>((section(&quot;__versions&quot;)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(section(&quot;__versions&quot;))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoLKM.mod.c" line="19" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_l_k_m_8mod_8c_1aebedc6dfadccd01faf3f462d4fa936f7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char __module_depends[] __used</type>
+        <definition>static const char __module_depends [] __used __attribute__</definition>
+        <argsstring>((section(&quot;.modinfo&quot;)))</argsstring>
+        <name>__attribute__</name>
+        <param>
+          <type>(section(&quot;.modinfo&quot;))</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoLKM.mod.c" line="36" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="_arduino_l_k_m_8mod_8c_1a4f302de7b83a95f673296114797764a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MODULE_INFO</definition>
+        <argsstring>(srcversion,&quot;EC3EA674E0F586F3B8AB713&quot;)</argsstring>
+        <name>MODULE_INFO</name>
+        <param>
+          <type>srcversion</type>
+        </param>
+        <param>
+          <type>&quot;EC3EA674E0F586F3B8AB713&quot;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoLKM.mod.c" line="40" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#include<sp/>&lt;linux/module.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;linux/vermagic.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;linux/compiler.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><ref refid="_arduino_l_k_m_8mod_8c_1a59ae061e50f755cbc9dbde3c6688273a" kindref="member">MODULE_INFO</ref>(vermagic,<sp/>VERMAGIC_STRING);</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">__visible<sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">module<sp/>__this_module</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><ref refid="_arduino_l_k_m_8mod_8c_1acc22bca8fb9ed0433181b5c98efdb5a4" kindref="member">__attribute__</ref>((section(&quot;.gnu.linkonce.this_module&quot;)))<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>.name<sp/>=<sp/>KBUILD_MODNAME,</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>.init<sp/>=<sp/>init_module,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>CONFIG_MODULE_UNLOAD</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>.exit<sp/>=<sp/>cleanup_module,</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/>.arch<sp/>=<sp/>MODULE_ARCH_INIT,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">modversion_info<sp/>____versions[]</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">__used</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><ref refid="_arduino_l_k_m_8mod_8c_1acc22bca8fb9ed0433181b5c98efdb5a4" kindref="member">__attribute__</ref>((section(&quot;__versions&quot;)))<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x53a8e63d,<sp/>__VMLINUX_SYMBOL_STR(module_layout)<sp/>},</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x964b601a,<sp/>__VMLINUX_SYMBOL_STR(kobject_put)<sp/>},</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x9cf067da,<sp/>__VMLINUX_SYMBOL_STR(sysfs_create_group)<sp/>},</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x64aa2bb6,<sp/>__VMLINUX_SYMBOL_STR(kobject_create_and_add)<sp/>},</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x76e6e96,<sp/>__VMLINUX_SYMBOL_STR(kernel_kobj)<sp/>},</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x29b6778,<sp/>__VMLINUX_SYMBOL_STR(filp_close)<sp/>},</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x72a95928,<sp/>__VMLINUX_SYMBOL_STR(filp_open)<sp/>},</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x91715312,<sp/>__VMLINUX_SYMBOL_STR(sprintf)<sp/>},</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x8ab59e4c,<sp/>__VMLINUX_SYMBOL_STR(vfs_write)<sp/>},</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x27e1a049,<sp/>__VMLINUX_SYMBOL_STR(printk)<sp/>},</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0x20c55ae0,<sp/>__VMLINUX_SYMBOL_STR(sscanf)<sp/>},</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>{<sp/>0xbdfb6dbb,<sp/>__VMLINUX_SYMBOL_STR(__fentry__)<sp/>},</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>__module_depends[]</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">__used</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><ref refid="_arduino_l_k_m_8mod_8c_1acc22bca8fb9ed0433181b5c98efdb5a4" kindref="member">__attribute__</ref>((section(</highlight><highlight class="stringliteral">&quot;.modinfo&quot;</highlight><highlight class="normal">)))<sp/>=</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;depends=&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><ref refid="_arduino_l_k_m_8mod_8c_1a59ae061e50f755cbc9dbde3c6688273a" kindref="member">MODULE_INFO</ref>(srcversion,<sp/></highlight><highlight class="stringliteral">&quot;EC3EA674E0F586F3B8AB713&quot;</highlight><highlight class="normal">);</highlight></codeline>
+    </programlisting>
+    <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoLKM.mod.c"/>
+  </compounddef>
+</doxygen>

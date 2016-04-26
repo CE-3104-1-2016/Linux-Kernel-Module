@@ -1,0 +1,158 @@
+.TH "Program/ArduinoInt/ArduinoInt.c" 3 "Sat Mar 26 2016" "Version 1.0" "Linux Kernel Module" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Program/ArduinoInt/ArduinoInt.c \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <avr/io\&.h>\fP
+.br
+\fC#include <util/delay\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+\fC#include <avr/interrupt\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBdelayTime\fP   250"
+.br
+.ti -1c
+.RI "#define \fBF_CPU\fP   16000000"
+.br
+.ti -1c
+.RI "#define \fBBUAD\fP   9600"
+.br
+.ti -1c
+.RI "#define \fBBRC\fP   ((\fBF_CPU\fP/16/\fBBUAD\fP)-1)"
+.br
+.ti -1c
+.RI "#define \fBRX_BUFFER_SIZE\fP   128"
+.br
+.ti -1c
+.RI "#define \fBcbi\fP(sfr, bit)   (_SFR_BYTE(sfr) &= ~_BV(bit))"
+.br
+.ti -1c
+.RI "#define \fBsbi\fP(sfr, bit)   (_SFR_BYTE(sfr) |= _BV(bit))"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBledModeZero\fP (void)"
+.br
+.ti -1c
+.RI "void \fBledModeOne\fP (void)"
+.br
+.ti -1c
+.RI "int \fBcheckButton\fP (void)"
+.br
+.ti -1c
+.RI "void \fBserialTx\fP (void)"
+.br
+.ti -1c
+.RI "void \fBserialRx\fP (void)"
+.br
+.ti -1c
+.RI "char \fBgetChar\fP (void)"
+.br
+.ti -1c
+.RI "char * \fBgetBuffChar\fP (void)"
+.br
+.ti -1c
+.RI "void \fBselectionMode\fP (void)"
+.br
+.ti -1c
+.RI "void \fBmain\fP ()"
+.br
+.ti -1c
+.RI "\fBISR\fP (USART_RX_vect)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "char \fBbuffChar\fP [\fBRX_BUFFER_SIZE\fP-1]"
+.br
+.ti -1c
+.RI "char \fBrxBuffer\fP [\fBRX_BUFFER_SIZE\fP]"
+.br
+.ti -1c
+.RI "uint8_t \fBrxReadPos\fP = 0"
+.br
+.ti -1c
+.RI "uint8_t \fBrxWritePos\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBLEDMODE\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBBUTTONSTATUS\fP = 0"
+.br
+.ti -1c
+.RI "int \fBrep\fP = 1"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define BRC   ((\fBF_CPU\fP/16/\fBBUAD\fP)-1)"
+
+.SS "#define BUAD   9600"
+
+.SS "#define cbi(sfr, bit)   (_SFR_BYTE(sfr) &= ~_BV(bit))"
+
+.SS "#define delayTime   250"
+
+.SS "#define F_CPU   16000000"
+
+.SS "#define RX_BUFFER_SIZE   128"
+
+.SS "#define sbi(sfr, bit)   (_SFR_BYTE(sfr) |= _BV(bit))"
+
+.SH "Function Documentation"
+.PP 
+.SS "int checkButton (void)"
+
+.SS "char * getBuffChar (void)"
+
+.SS "char getChar (void)"
+
+.SS "ISR (USART_RX_vect)"
+
+.SS "void ledModeOne (void)"
+
+.SS "void ledModeZero (void)"
+
+.SS "void main ()"
+
+.SS "void selectionMode (void)"
+
+.SS "void serialRx (void)"
+
+.SS "void serialTx (void)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "char buffChar[\fBRX_BUFFER_SIZE\fP-1]"
+
+.SS "bool BUTTONSTATUS = 0"
+
+.SS "bool LEDMODE = 0"
+
+.SS "int rep = 1"
+
+.SS "char rxBuffer[\fBRX_BUFFER_SIZE\fP]"
+
+.SS "uint8_t rxReadPos = 0"
+
+.SS "uint8_t rxWritePos = 0"
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Linux Kernel Module from the source code\&.

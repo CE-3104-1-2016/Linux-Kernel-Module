@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="dir_ae9f9230202598cfbcea1e1894bf5d4a" kind="dir">
+    <compoundname>Program/ArduinoInt</compoundname>
+    <innerfile refid="_arduino_int_8c">ArduinoInt.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/jesteban/Escritorio/malcolm/Linux-Kernel-Module/Program/ArduinoInt/"/>
+  </compounddef>
+</doxygen>
